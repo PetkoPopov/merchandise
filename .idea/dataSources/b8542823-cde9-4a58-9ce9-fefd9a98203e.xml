@@ -1081,7 +1081,7 @@
     </column>
     <column id="341" parent="335" name="price">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="342" parent="335" name="store">

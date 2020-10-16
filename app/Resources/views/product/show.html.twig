@@ -29,6 +29,10 @@
                 <th>Comment</th>
                 <td>{{ product.comment }}</td>
             </tr>
+            <tr>
+                <th>public at</th>
+                <td>{{ product.date.format('y-m-d ') }}</td>
+            </tr>
         </tbody>
     </table>
 

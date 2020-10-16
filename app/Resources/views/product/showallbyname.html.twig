@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for n in names  %}
+    {{ n.name }}{{ '---' }}{{ n.type }}{{ '---' }}{{ n.price }}{{ '---' }}{{ n.store }}{{ '---' }}{{ n.date.format('d-M-Y H:i:s') }}
+<br/>
+    {% endfor %}
+{% endblock %}
+

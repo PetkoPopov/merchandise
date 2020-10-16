@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 /**
  * Product controller.
@@ -34,7 +35,7 @@ class ProductController extends Controller
      * Creates a new product entity.
      *
      * @Route("/new", name="product_new" , methods={"GET" , "POST"})
-     *
+     3*
      *
      */
     public function newAction(Request $request)
@@ -132,5 +133,21 @@ class ProductController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    /**
+     * @Route("/find/{name}")
+     * @param string $name
+     * @return Response
+     */
+    public function showProductByName($name){
+
+      $names=$this->getDoctrine()
+          ->getRepository(Product::class)
+          ->findBy(['name'=>$name]);
+
+
+        return $this->render('product/showallbyname.html.twig',['names'=>$names]);
+
     }
 }

@@ -39,7 +39,7 @@ class Product
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="float")
      */
     private $price;
 
@@ -68,6 +68,7 @@ class Product
 private $date;
 public function __construct()
 {
+    $this->date=new \DateTime('now');
     $this->user=new ArrayCollection();
 }
 
